@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Microservices</title>
 </head>
 <body>
-    <h1>Dockerized Web App</h1>
-    <div>
-        <span>HOST: {{ host }}</span>
-        <span>IP: {{ ip }}</span>
+    <div class="container">
+        <div class="header">
+            <h1>Dockerized Web App</h1>
+        </div>
+        <div class="content-container">
+            <div class="info-content">
+                <div class="info-group">
+                    <span>HOST</span>
+                    <span>IP</span>
+                </div>
+                <div class="info-group">
+                    <input disabled type="text" value="{{ host }}">
+                    <input disabled type="text" value="{{ ip }}">
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

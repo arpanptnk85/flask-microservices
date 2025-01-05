@@ -10,15 +10,11 @@ def getHostDetails():
     host_ip = socket.gethostbyname(host_name)
     return str(host_name), str(host_ip)
 
-@app.route("/", methods=["GET"])
-def hello():
-    return "<p>Hello, World!</p>"
-
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify(status="UP")
 
-@app.route("/home", methods=["GET"])
+@app.route("/", methods=["GET"])
 def home():
     host_name, host_ip = getHostDetails()
     return render_template('index.html', host=host_name, ip=host_ip)
